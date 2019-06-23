@@ -1,8 +1,10 @@
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+  font-size: 2.2ch;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +12,78 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.header {
+  top: 0px;
+  position: fixed;
+  width: 100%;
+  background-color: rgb(160, 190, 255);
+  border-bottom: 1px solid #852;
+}
+
+.virtButton {
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-right: 1px solid #852;
+  font-size: 100%;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.stickerBlock {
+  width: 90%;
+  margin: 2% auto;
+  padding: 1%;
+}
+
+.sticker {
+  vertical-align: top;
+  position: relative;
+  display: inline-block;
+  width: 20%;
+  background-color: rgb(250, 255, 253);
+  border: 1px solid rgb(172, 221, 183);
+  border-top: 5px solid rgb(172, 221, 176);
+  border-radius: 5px;
+  padding: 5px;
+  margin: 2%;
+}
+
+.stickerHeader {
+
+}
+
+.stickerName, .stickerAuthor {
+  max-width: 70%;
+  display: inline-block;
+}
+
+.stickerName {
+  font-weight: 900;
+}
+
+.stickerAuthor{
+  position: absolute;
+  right: 2%; 
+  color: rgb(125, 185, 106);
+}
+
+.stickerDate {
+  font-size: 1.2ch;
+  color: rgb(143, 104, 104);
+}
+
+.stikerWorkList {
+  list-style: none;
+  padding: 0;
+  font-size: 1.8ch;
+}
+
+.stickerCB{
+  border-style:inset;
+  border-width:5px;
+  border-color: #f00;
+  border-radius: 3px; /*только в CSS3!!!*/
 }

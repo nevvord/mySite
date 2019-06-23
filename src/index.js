@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Clock from './App';
-import Button from './button';
+//import Clock from './App';
+import Header from './Module/header';
+import Stickers from './Module/stikers/stickers';
 import * as serviceWorker from './serviceWorker';
 
 
@@ -10,8 +11,8 @@ class Apps extends React.Component {
     render() {
         return (
             <div className="wreapper">
-                <Clock />
-                <Button />
+                <Header />
+                <Stickers />
             </div>
         )
     }
