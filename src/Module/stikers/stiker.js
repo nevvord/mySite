@@ -6,16 +6,12 @@ class Sticker extends React.Component {
         works: []
     }
 
-    data() {
-        const pop = this.props.getMethod();
-        console.log(pop);
+    GetImport() {
         
-            
+            return <h1>kek</h1>;
         
     }
-
     render() {
-        this.data();
         return (
             <div className="sticker" > 
 
