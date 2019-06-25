@@ -1,11 +1,24 @@
 import React from 'react';
 import MiniWorks from './miniWorks/miniWorks';
+import axios from 'axios';
 
 class Sticker extends React.Component {
-    /*constructor (props) {
+    constructor (props) {
         super(props);
         
-    }*/
+    }
+
+    
+
+    removeSticker (event) {
+        const stickerId = event.target.id;
+        console.log(stickerId);
+        
+        axios.delete('http://localhost:30012/work/' + stickerId).then(() => {
+            console.log(stickerId);
+          
+        });
+    }
 
    
     
@@ -29,10 +42,9 @@ class Sticker extends React.Component {
                     <div className="stickerDate">{this.props.date}</div>
                 </div>
                 <ul className="stikerWorkList">
-                        <form key={this.props.id} >
-                            <MiniWorks miniWorks = {this.props.miniWork} id={this.props.id}/>
-                        </form>
+                    <MiniWorks miniWorks = {this.props.miniWork} id={this.props.id}/>
                 </ul>
+                <button id={this.props.id} onClick={this.removeSticker.bind(this)}>Удалить</button>
             </div>
         )
     }

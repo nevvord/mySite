@@ -13,6 +13,8 @@ class Stickers extends React.Component {
         data: []
     }
 
+    
+
     componentDidMount () {
         axios.get(`http://localhost:30012/works`).then(res => {
             console.log(res);;
@@ -24,7 +26,6 @@ class Stickers extends React.Component {
     render() {
         const list = this.state.data.map((item, index) => {         
             return  <Sticker 
-                        key={item._id} 
                         id={item._id} 
                         title={item.title}  
                         author={item.author} 
@@ -35,6 +36,15 @@ class Stickers extends React.Component {
         
         return(        
             <div key={this.state.data.id} className="stickerBlock">
+                <button className="addSticker">
+                    <p>Добавить Стикер</p>
+                    <div className="addBlock">
+                        lol
+                    </div>
+                </button>
+                <div className="addBlock">
+                    lol
+                </div>
                 {list}
             </div>
         )
