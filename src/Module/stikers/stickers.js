@@ -1,7 +1,7 @@
 import React from 'react';
 //import { async } from 'q';
 import Sticker from './stiker';
-//import axios from 'axios';
+import axios from 'axios';
 
 
 class Stickers extends React.Component {
@@ -12,30 +12,19 @@ class Stickers extends React.Component {
     state = {
         data: []
     }
-    
-    
-    
-    getWorks = async () => {
-        const apiUrl = await fetch('http://localhost:30012/works');
-        const data = await apiUrl.json();        
-        this.setState({
-            data: data
-        })
-        console.log(data[0]);
-        
-    }
 
     componentDidMount () {
-        this.getWorks();
+        axios.get(`http://localhost:30012/works`).then(res => {
+            console.log(res);;
+            this.setState({data: res.data})
+            
+        })  
     }
    
     render() {
-        
-        const list = this.state.data.map((item, index) => { 
-            
-                       
+        const list = this.state.data.map((item, index) => {         
             return  <Sticker 
-                        key={index} 
+                        key={item._id} 
                         id={item._id} 
                         title={item.title}  
                         author={item.author} 
@@ -45,7 +34,7 @@ class Stickers extends React.Component {
         })
         
         return(        
-            <div className="stickerBlock">
+            <div key={this.state.data.id} className="stickerBlock">
                 {list}
             </div>
         )

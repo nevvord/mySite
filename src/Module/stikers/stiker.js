@@ -7,17 +7,16 @@ class Sticker extends React.Component {
         
     }*/
 
+   
+    
+    
     kek (event)  {
         //let changed = [event.target.id, event.target.defaultChecked];
         console.log(event.target.id);
         
-        if (event.target.checked) {
-            console.log('checked');
+        event.target.checked ? console.log('checked') : console.log('unChecked');
             
-        } else {
-            console.log('unChecked');
-            
-        }
+        
     }
 
     render() {
@@ -30,7 +29,7 @@ class Sticker extends React.Component {
                     <div className="stickerDate">{this.props.date}</div>
                 </div>
                 <ul className="stikerWorkList">
-                        <form id={this.props.id} onChange={this.kek}>
+                        <form key={this.props.id} >
                             <MiniWorks miniWorks = {this.props.miniWork} id={this.props.id}/>
                         </form>
                 </ul>
