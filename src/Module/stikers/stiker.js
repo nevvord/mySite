@@ -9,7 +9,7 @@ class Sticker extends React.Component {
 
     kek (event)  {
         //let changed = [event.target.id, event.target.defaultChecked];
-        console.log(event.target.p);
+        console.log(event.target.id);
         
         if (event.target.checked) {
             console.log('checked');

@@ -79,10 +79,17 @@ Server.put('/work/:id', (req, res) => {
     );
 });
 
-Server.put('/work/mini/:id', (req, res) => {
+Server.put('/work/mini/:id/:index', (req, res) => {
+    console.log(req.params.id);
+    console.log(req.params.index);
+    let index = `miniWork.${req.params.index}.checked`;
+    console.log(index);
+    
+    
+    
     db.collection('works').updateOne(
         { _id: new ObjectID(req.params.id) },
-        { $set: { miniWork: req.body.miniWork } },
+        { $set: { [index]: req.body.checked } },
         { upsert: true },
         (err, result) => {
             if (err) {

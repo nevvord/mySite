@@ -10,11 +10,6 @@ class Stickers extends React.Component {
     }*/
 
     state = {
-        id:     undefined,
-        author: undefined,
-        title:  undefined,
-        date:   undefined,
-        miniWork: [],
         data: []
     }
     
@@ -26,7 +21,10 @@ class Stickers extends React.Component {
         this.setState({
             data: data
         })
+        console.log(data[0]);
+        
     }
+
     componentDidMount () {
         this.getWorks();
     }
