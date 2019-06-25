@@ -1,37 +1,38 @@
 import React from 'react';
+import MiniWorks from './miniWorks/miniWorks';
 
 class Sticker extends React.Component {
-
-    stickers = {
-        works: []
-    }
-
-    data() {
-        const pop = this.props.getMethod();
-        console.log(pop);
+    /*constructor (props) {
+        super(props);
         
+    }*/
+
+    kek (event)  {
+        //let changed = [event.target.id, event.target.defaultChecked];
+        console.log(event.target.p);
+        
+        if (event.target.checked) {
+            console.log('checked');
             
-        
+        } else {
+            console.log('unChecked');
+            
+        }
     }
 
     render() {
-        this.data();
+        
         return (
-            <div className="sticker" > 
-
-                <form onSubmit={this.props.getMethod}>
-                    <button>Жми</button>
-                </form>
+            <div className="sticker">
                 <div className="stickerHeader">
-                    <div className="stickerName">Блок авторизации и регистрации пользователя</div>
-                    <div className="stickerAuthor">Nevvord</div>
-                     <div className="stickerDate">22.06.2019</div>
+                    <div className="stickerName">{this.props.title}</div>
+                    <div className="stickerAuthor">{this.props.author}</div>
+                    <div className="stickerDate">{this.props.date}</div>
                 </div>
-                <ul className="stikerWorkList"> 
-                    <li><label className="stikerWorkListText"><input type="checkbox" className="stickerCB"></input>Регистрация</label></li>
-                    <li><label className="stikerWorkListText"><input type="checkbox" className="stickerCB"></input>Верстка</label></li>
-                    <li><label className="stikerWorkListText"><input type="checkbox" className="stickerCB"></input>Авторизация</label></li>
-                    <li><label className="stikerWorkListText"><input type="checkbox" className="stickerCB"></input>Востановление пароля</label></li>
+                <ul className="stikerWorkList">
+                        <form id={this.props.id} onChange={this.kek}>
+                            <MiniWorks miniWorks = {this.props.miniWork} id={this.props.id}/>
+                        </form>
                 </ul>
             </div>
         )

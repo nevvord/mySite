@@ -1,53 +1,54 @@
 import React from 'react';
-import { async } from 'q';
-import Ssticker from './stiker';
-import axios from 'axios';
+//import { async } from 'q';
+import Sticker from './stiker';
+//import axios from 'axios';
 
 
 class Stickers extends React.Component {
+    /*constructor(props) {
+        super(props);
+    }*/
 
     state = {
-        works : []
+        id:     undefined,
+        author: undefined,
+        title:  undefined,
+        date:   undefined,
+        miniWork: [],
+        data: []
     }
-
-    componentDidMount () {
-        axios.get('http://localhost:30012/works').then(({ data }) => {
-          this.state = {
-            works : data
-          };
+    
+    
+    
+    getWorks = async () => {
+        const apiUrl = await fetch('http://localhost:30012/works');
+        const data = await apiUrl.json();        
+        this.setState({
+            data: data
         })
-      }
-
-    sticker() {  
-        //const works = this.state.works.map((work) =>
-        //console.log(this.state.works);
-        
-        return(
-            <div className="sticker" > 
-                <div className="stickerHeader">
-                    <div className="stickerName">Блок авторизации и регистрации пользователя</div>
-                    <div className="stickerAuthor"></div>
-                    <div className="stickerDate">22.06.2019</div>
-                </div>
-                <ul className="stikerWorkList"> 
-                    <li><label className="stikerWorkListText"><input type="checkbox" className="stickerCB"></input>Регистрация</label></li>
-                    <li><label className="stikerWorkListText"><input type="checkbox" className="stickerCB"></input>Верстка</label></li>
-                    <li><label className="stikerWorkListText"><input type="checkbox" className="stickerCB"></input>Авторизация</label></li>
-                    <li><label className="stikerWorkListText"><input type="checkbox" className="stickerCB"></input>Востановление пароля</label></li>
-                </ul>
-            </div>
-        );
     }
-
-    huender() {
-        return <h1>kek</h1>;
+    componentDidMount () {
+        this.getWorks();
     }
-
+   
     render() {
-        return (
-        //
+        
+        const list = this.state.data.map((item, index) => { 
+            
+                       
+            return  <Sticker 
+                        key={index} 
+                        id={item._id} 
+                        title={item.title}  
+                        author={item.author} 
+                        date={item.date} 
+                        miniWork={item.miniWork}
+                    />
+        })
+        
+        return(        
             <div className="stickerBlock">
-                <this.sticker />
+                {list}
             </div>
         )
     }

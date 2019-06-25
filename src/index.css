@@ -33,16 +33,19 @@ code {
 }
 
 .stickerBlock {
+  
   width: 90%;
   margin: 2% auto;
   padding: 1%;
 }
 
 .sticker {
+  text-align: left;
   vertical-align: top;
   position: relative;
   display: inline-block;
-  width: 20%;
+  max-width: 80%;
+  min-width: px;
   background-color: rgb(250, 255, 253);
   border: 1px solid rgb(172, 221, 183);
   border-top: 5px solid rgb(172, 221, 176);

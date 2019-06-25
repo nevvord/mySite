@@ -79,6 +79,21 @@ Server.put('/work/:id', (req, res) => {
     );
 });
 
+Server.put('/work/mini/:id', (req, res) => {
+    db.collection('works').updateOne(
+        { _id: new ObjectID(req.params.id) },
+        { $set: { miniWork: req.body.miniWork } },
+        { upsert: true },
+        (err, result) => {
+            if (err) {
+                console.log(err);
+                return res.sendStatus(500);
+            }
+            res.send(200);
+        }
+    );
+});
+
 Server.delete('/work/:id', (req, res) => {
     db.collection('works').deleteOne(
         { _id: new ObjectID(req.params.id) },
