@@ -1,24 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
-//import Clock from './App';
-import Header from './Module/header';
-import Stickers from './Module/stikers/stickers';
 import * as serviceWorker from './serviceWorker';
+import {Rendering} from './rendering';
+import state from './redux/state';
 
 
-class Apps extends React.Component {
-    render() {
-        return (
-            <div className="wreapper">
-                <Header />
-                <Stickers />
-            </div>
-        )
-    }
-}
 
-ReactDOM.render(<Apps />, document.getElementById('root'));
+Rendering(state);
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

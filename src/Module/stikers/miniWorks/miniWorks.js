@@ -20,9 +20,10 @@ let MiniWorks = props =>{
     let list = props.miniWorks.map((item, index) => { 
       
     return (
-        <li  id={props.id}>
+        <li key={index} id={props.id}>
             <label className="stikerWorkListText" >
                 <input 
+                    
                     type="checkbox" 
                     className="stickerCB"
                     value={index}

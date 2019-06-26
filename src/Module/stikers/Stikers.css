@@ -1,0 +1,227 @@
+.stickerBlock {
+    position: relative;
+    width: 90%;
+    margin: 2% auto;
+    padding: 1%;
+}
+
+.addBlock {
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+.addSticker {
+    padding: 0;
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgb(108, 177, 108);
+    background: rgb(226, 255, 236);
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.addSticker:hover .addBlock {
+    display: block;
+}
+
+.sticker {
+    vertical-align: top;
+    position: relative;
+    display: inline-block;
+    max-width: 80%;
+    min-width: px;
+    background-color: rgb(250, 255, 253);
+    border: 1px solid rgb(172, 221, 183);
+    border-top: 5px solid rgb(172, 221, 176);
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2%;
+    
+}
+
+.stickerHeader {}
+
+.stickerName,
+.stickerAuthor {
+    max-width: 70%;
+    display: inline-block;
+}
+
+.stickerName {
+    font-weight: 900;
+}
+
+.stickerAuthor {
+    position: absolute;
+    right: 2%;
+    color: rgb(125, 185, 106);
+}
+
+.stickerDate {
+    font-size: 1.2ch;
+    color: rgb(143, 104, 104);
+}
+
+.stikerWorkList {
+    list-style: none;
+    padding: 0;
+    font-size: 1.8ch;
+}
+
+.stickerCB {
+    border-style: inset;
+    border-width: 5px;
+    border-color: #f00;
+    border-radius: 3px;
+    /*только в CSS3!!!*/
+}
+
+.sticker button {
+    width: 40%;
+    display: block;
+    margin: 0px auto;
+    border: none;
+    border-bottom: 2px solid rgb(137, 156, 28);
+    background-color: rgba(196, 182, 51, 0);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.sticker button:hover {
+    width: 80%;
+    border-bottom: 2px solid rgb(156, 54, 28);
+    font-weight: 600;
+    color: rgb(255, 57, 7);
+}
+
+.stickerNav {
+    position: fixed;
+    right: 0;
+    top: 45px;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(235, 238, 241);
+    border-radius: 5px 0 0 5px;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+
+
+.leer1, .leer2, .leer3 {
+    margin: 2px;
+    width: 20px;
+    height: 4px;
+    background: rgb(143, 141, 141);
+    transition: 0.5s;
+}
+
+.leer1 {
+    border-radius: 3px 3px 1px 1px;
+}
+.leer2 {
+    border-radius: 3px 3px 3px 3px;
+}
+.leer3 {
+    border-radius: 1px 1px 3px 3px;
+}
+.stickerNavBox{
+    padding: 10px 9px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.stickerNavBox:hover .leer1{
+    background-color: rgb(204, 113, 113);
+}
+.stickerNavBox:hover .leer2{
+    background-color: rgb(189, 206, 116);
+}
+.stickerNavBox:hover .leer3{
+    background-color: rgb(144, 145, 219);
+}
+
+.stikerNavFun {
+    position: fixed;
+    right: 50px;
+    top: 45px;
+    background-color: rgb(239, 242, 245);
+    text-align: left;
+    width: 150px;
+    border-radius: 6px 0px 6px 6px;
+    border: 1px solid #999;
+    transition: 2s;
+}
+
+.stikerNavFun ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.stikerNavFun ul li {
+    cursor: pointer;
+    text-align: center;
+    border-bottom: 1px solid #999;
+    color: rgb(97, 97, 97);
+    font-weight: 500;
+    transition: 0.3s;
+}
+.stikerNavFun ul li:hover {
+    color: rgb(109, 150, 185);
+}
+
+.stikerNavFun ul li:last-child {
+    border: none;
+}
+
+.addStickerBlock {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.089);
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.addStickerBox{
+    position: fixed;
+    top: 140px;
+    left:50%;
+    right: 10%;
+    width: 450px;
+    margin-left: -225px;
+    max-width: 80%; 
+    height: 250px;
+    background-color: rgb(253, 252, 252);
+    border-radius: 8px 8px 3px 3px;
+    border: 1px solid rgb(142, 151, 228);
+    border-top: 5px solid rgb(142, 151, 228);
+    z-index: 3;
+    box-shadow: 0px 0px 15px 5px rgba(142, 151, 228, 0.527);
+}
+
+.addStickerBox input {
+    display: block;
+    border: none;
+    border-radius: 2px;
+    padding: 7px;
+    font-size: 18px;
+    color: rgb(122, 122, 122);
+    background-color: rgb(236, 236, 236);
+}
+
+.addStickerBox label{
+    display: block;
+    margin-left: 15px;
+}
+.addStickerBox p {
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    
+}

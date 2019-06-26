@@ -20,7 +20,7 @@ code {
   width: 100%;
   background-color: rgb(160, 190, 255);
   border-bottom: 1px solid #852;
-  z-index: 1;
+  z-index: 2;
 }
 
 .virtButton {
@@ -38,99 +38,3 @@ code {
   background-color: #852;
 }
 
-.stickerBlock {
-  position: relative;
-  width: 90%;
-  margin: 2% auto;
-  padding: 1%;
-}
-
-.addBlock {
-  display: none;
-  margin: 0;
-  padding: 0;
-}
-
-.addSticker {
-  padding: 0;
-  display: block;
-  width: 100%;
-  border-radius: 10px;
-  border: 1px solid rgb(108, 177, 108);
-  background: rgb(226, 255, 236);
-  cursor: pointer;
-  font-size: 25px;
-}
-
-.addSticker:hover .addBlock {
-  display: block;
-}
-
-.sticker {
-  vertical-align: top;
-  position: relative;
-  display: inline-block;
-  max-width: 80%;
-  min-width: px;
-  background-color: rgb(250, 255, 253);
-  border: 1px solid rgb(172, 221, 183);
-  border-top: 5px solid rgb(172, 221, 176);
-  border-radius: 5px;
-  padding: 5px;
-  margin: 2%;
-}
-
-.stickerHeader {
-
-}
-
-.stickerName, .stickerAuthor {
-  max-width: 70%;
-  display: inline-block;
-}
-
-.stickerName {
-  font-weight: 900;
-}
-
-.stickerAuthor{
-  position: absolute;
-  right: 2%; 
-  color: rgb(125, 185, 106);
-}
-
-.stickerDate {
-  font-size: 1.2ch;
-  color: rgb(143, 104, 104);
-}
-
-.stikerWorkList {
-  list-style: none;
-  padding: 0;
-  font-size: 1.8ch;
-}
-
-.stickerCB{
-  border-style:inset;
-  border-width:5px;
-  border-color: #f00;
-  border-radius: 3px; /*только в CSS3!!!*/
-}
-
-.sticker button {
-  width: 40%;
-  display: block;
-  margin: 0px auto;
-  border: none;
-  border-bottom: 2px solid rgb(137, 156, 28);
-  background-color: rgba(196, 182, 51, 0);
-  cursor: pointer;
-  transition: 2s;
-}
-
-.sticker button:hover {
-  width: 80%;
-  border-bottom: 2px solid rgb(156, 54, 28);
-  font-weight: 600;
-  color:  rgb(255, 57, 7);
-}

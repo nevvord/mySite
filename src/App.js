@@ -1,51 +1,20 @@
 import React from 'react';
-//import './App.css';
+import './App.css';
+import Header from './Module/header';
+import Stickers from './Module/stikers/stickers';
 
 
 
-function ShowBanner (props) {
-  if (props.time > 45) {
-    return (
-      <div className="restBlock"> Отдых </div>
-    )
-  } else {
+
+class Apps extends React.Component {
+  render() {    
       return (
-        <div className="workBlock"> Работаем </div>
-      ) 
+          <div className="wreapper">
+              <Header />
+              <Stickers state={this.props.state} getStickers={this.props.getStickers} removeSticker={this.props.removeSticker}/>
+          </div>
+      )
   }
 }
 
-class Clock extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {date:new Date()}
-  }
-  
-  componentDidMount() {
-    this.timerId = setInterval(
-      () => this.tick(),
-      1000
-    )
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timerId)
-  }
-
-  tick() {
-    this.setState({
-      date: new Date()
-    })
-  }
-
-  render(){
-    return (
-      <div>
-        <ShowBanner time={this.state.date.getSeconds()}/>
-        <h1>Текушае время {this.state.date.toLocaleTimeString()}</h1>
-      </div>
-    )
-  }
-}
-
-export default Clock;
+export default Apps;
