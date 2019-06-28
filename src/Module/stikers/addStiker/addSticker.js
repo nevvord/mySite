@@ -1,8 +1,4 @@
 import React from 'react';
-import { timingSafeEqual } from 'crypto';
-import Axios from 'axios';
-import { stat } from 'fs';
-
 class Adder extends React.Component {
     constructor(props){
         super(props);
@@ -19,47 +15,25 @@ class Adder extends React.Component {
                 title: this.state.title,
                 miniWork: this.state.lines
             }
-
-            Axios.post('http://localhost:30012/work', bodyJson)
-                .then(res => {
-                    console.log(res);
-                    console.log(res.data);
-                    
-                })
+            this.props.sendNewStiker(bodyJson)
         }
 
         let addLine = () => {
-            console.log(this.state.lines);
             this.setState({
                 lines: [...this.state.lines, {title: ""} ]
             })
-            console.log(this.state.lines);
         }
-
         let inpTitleToState = (event) => {
             this.setState({
                 title: event.target.value
-            })
-            console.log(event.target.value);
-            console.log(this.state.title);
-            
-            
+            })   
         }
-
         let inpToState = (event) => {
-            console.log(this.state.lines[event.target.name]);
-            let arr = this.state.lines;
-            console.log(arr);
+            let arr = this.state.lines;;
             arr[event.target.name].title = event.target.value;
-            console.log(arr[event.target.name].inner);
             this.setState({
                 lines: [...arr]
-            })
-            console.log(this.state.lines);
-            
-            
-            
-            
+            })  
         }
 
         let lines = this.state.lines.map((item, index) => {
@@ -72,7 +46,7 @@ class Adder extends React.Component {
 
                 <div className="blockAddMiniWork">
                     <button className="addMiniWorks" onClick={addLine}>ADD WORK</button>
-                    <button className="sendMiniWorks" onClick={sendSticker}>SEND STICKER</button>
+                    <button className="sendMiniWorks" onClick={sendSticker.bind(this)}>SEND STICKER</button>
                 </div>
             </div>
         )

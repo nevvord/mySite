@@ -1,21 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 
-
-let postData = (event) => {
-    let url = `http://localhost:30012/work/mini/${event.target.id}/${event.target.value}`;
-    let bodyJson = event.target.checked ? {"checked": true} : {"checked": false};
-    console.log(bodyJson);
-    
-    axios
-        .put(url, bodyJson)
-        .then(res => {
-            console.log(res);
-            console.log(res.data);
-        })
-}
-
-
 let MiniWorks = props =>{
     let list = props.miniWorks.map((item, index) => { 
       
@@ -30,7 +15,7 @@ let MiniWorks = props =>{
                     id={props.id}
                     index={index}
                     defaultChecked={item.checked}
-                    onChange={postData}   
+                    onChange={props.ChangeMiniWorks}   
                 >
                 </input>
                 <span>{item.title}</span>

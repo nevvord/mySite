@@ -11,7 +11,13 @@ class Apps extends React.Component {
       return (
           <div className="wreapper">
               <Header />
-              <Stickers state={this.props.state} getStickers={this.props.getStickers} removeSticker={this.props.removeSticker}/>
+              <Stickers 
+                state={this.props.state} 
+                getStickers={this.props.getStickers} 
+                removeSticker={this.props.removeSticker}
+                sendNewStiker={this.props.sendNewStiker}
+                ChangeMiniWorks={this.props.ChangeMiniWorks}
+            />
           </div>
       )
   }

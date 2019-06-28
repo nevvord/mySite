@@ -12,7 +12,7 @@ class Sticker extends React.Component {
                     <div className="stickerDate">{this.props.date}</div>
                 </div>
                 <ul className="stikerWorkList">
-                    <MiniWorks miniWorks = {this.props.miniWork} id={this.props.id}/>
+                    <MiniWorks miniWorks = {this.props.miniWork} id={this.props.id} ChangeMiniWorks={this.props.ChangeMiniWorks}/>
                 </ul>
                 <button id={this.props.id} onClick={this.props.removeSticker.bind(this)} >Удалить</button>
             </div>

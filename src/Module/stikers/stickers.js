@@ -52,6 +52,7 @@ class Stickers extends React.Component {
                         date={item.date} 
                         miniWork={item.miniWork}
                         removeSticker={this.props.removeSticker}
+                        ChangeMiniWorks={this.props.ChangeMiniWorks}
 
                     />
         })
@@ -77,7 +78,7 @@ class Stickers extends React.Component {
                 <div>
                     <div className="addStickerBlock" onClick={openBoxAddSticker}></div>
                     <div className="addStickerBox">
-                        <AddSticker />
+                        <AddSticker sendNewStiker={this.props.sendNewStiker}/>
                     </div>
                 </div>
                 }
