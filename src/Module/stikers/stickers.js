@@ -1,5 +1,6 @@
 import React from 'react';
 import Sticker from './stiker';
+import AddSticker from './addStiker/addSticker';
 import './Stikers.css';
 
 
@@ -74,15 +75,9 @@ class Stickers extends React.Component {
                 {list}
                 {this.state.openBoxAddSticker === true &&
                 <div>
-                    <div className="addStickerBlock" onClick={openBoxAddSticker}>
-                    </div>
+                    <div className="addStickerBlock" onClick={openBoxAddSticker}></div>
                     <div className="addStickerBox">
-                        <form>
-                            <label>
-                                <p>Title:</p>
-                                <input type="text"></input>
-                            </label>
-                        </form>
+                        <AddSticker />
                     </div>
                 </div>
                 }

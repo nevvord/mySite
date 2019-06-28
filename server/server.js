@@ -52,6 +52,8 @@ Server.get('/work/:id', (req, res) => {
 Server.post('/work', (req, res) => {
     var work = {
         title: req.body.title,
+        author: "nevvord",
+        date: new Date(),
         miniWork: req.body.miniWork
     };
 

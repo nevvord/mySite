@@ -87,6 +87,7 @@
     background-color: rgba(196, 182, 51, 0);
     cursor: pointer;
     transition: 0.5s;
+    outline:none;
 }
 
 .sticker button:hover {
@@ -196,7 +197,7 @@
     width: 450px;
     margin-left: -225px;
     max-width: 80%; 
-    height: 250px;
+    height: auto;
     background-color: rgb(253, 252, 252);
     border-radius: 8px 8px 3px 3px;
     border: 1px solid rgb(142, 151, 228);
@@ -207,21 +208,40 @@
 
 .addStickerBox input {
     display: block;
+    width: 440px;
     border: none;
-    border-radius: 2px;
-    padding: 7px;
+    border-bottom: 2px solid rgb(187, 187, 187);
+    padding: 2px 5px;
     font-size: 18px;
     color: rgb(122, 122, 122);
-    background-color: rgb(236, 236, 236);
+    background-color: none;
+    margin-top: 4px; ;
+    outline:none;
 }
 
-.addStickerBox label{
+
+.addMiniWorks, .sendMiniWorks{
     display: block;
-    margin-left: 15px;
+    background-color: rgb(75, 125, 201);
+    border: none;
+    width: 100%;
+    height: 100%;
+    margin: none;
+    padding: 4px;
+    outline:none;
+    color: rgb(224, 224, 224);
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
 }
-.addStickerBox p {
-    margin: 0;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 24px;
-    
+.sendMiniWorks{
+    background-color: rgb(75, 201, 142);
+    color: whitesmoke;
+    border-radius: 0px 0px 3px 3px;
+}
+.sendMiniWorks:hover{
+    background-color: rgb(33, 226, 136);
+}
+.addMiniWorks:hover{
+    background-color: rgb(115, 85, 197);
 }
